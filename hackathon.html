@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Hackathon - AI for Impact</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#menu-icon" class="logo">Hackathon AI for Impact</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html">Back To Home</a>
+        </nav>
+    </header>
+
+    <section class="challenge-section" id="challenge">
+        <h2 class="heading">The <span>Challenge</span></h2>
+        <div class="challenge-container">
+            <div class="challenge-box">
+                <p class="challenge-brief">
+                    Developing an optimized planning system for electrical network maintenance and emergency response, taking into account a susbtantial amount of constraints.
+                </p>
+                <a href="#" class="challenge-toggle" id="toggleChallenge">
+                    See full challenge <i class='bx bx-chevron-down'></i>
+                </a>
+                <div class="challenge-full" id="fullChallenge">
+                    <h1>The solution requires to :</h1>
+                    <ul class="spaced-list">
+                        <li>Generate an optimized and dynamic schedule for the next 6 weeks</li>
+                        <li>Incorporate the technical and human constraints specific to each worksite</li>
+                        <li>Adapt to real-time changes (urgent new projects, postponements, cancellations, etc.)</li>
+                    </ul>
+                    <h1>Worksite Organization and Operational Rules :</h1>
+                    <ul class="spaced-list">
+                        <li><strong>Preparation</strong>, which must be carried out by an Electrical Technician (TE). This phase precedes execution. The required time depends on the project and is provided for each one.</li>
+                        <li><strong>Execution</strong> : if the project requires a power shutdown (indicated in the ADC column of the provided dataset), a properly certified TE must also be assigned and if the project is outsourced, there is no need to assign two Multi-skilled Intervention Technicians (TIP). Otherwise, two TIPs must be assigned. A column in the project file indicates whether TIPs are needed. The required time depends on the project and is provided for each one.</li>
+                        <li>Projects may take place on either the high-voltage (HTA) or low-voltage (BT) network. As with shutdowns, the required certifications of TEs and TIPs must be checked.</li>
+                        <li>TEs and TIPs are distributed across three Operational Bases (BO): Laurencin, Balma, and De Croutte. Their addresses are provided, along with the number of TE and TIP agents at each base and their respective skills/certifications.</li>
+                    </ul>
+                    <h1>Provided Datasets :</h1>
+		    <ul>
+			<li>Worksite identification</li>
+			<li>Task durations : preparation and execution time</li>
+			<li>Dates : request date and desired date</li>
+			<li>Network type: HTA (High Voltage) or BT (Low Voltage)</li>
+			<li>Shutdown required: Yes / No (ADC)</li>
+			<li>Live work possible: Yes / No (ATST)</li>
+			<li>Phasing required: if yes, the same Electrical Technician (TE) must carry out both preparation and execution.</li>
+			<li>Internal resource needs: Two Multi-skilled Intervention Technicians (TIP) are required for the execution if the worksite is not outsourced.</li>
+			<li>For each TE, it is specified whether they are certified to perform preparation and execution phases on HTA and BT networks. For some certified but highly solicited TEs, the note “To be avoided” is indicated.</li>
+			<li>TIPs are not authorized to perform shutdowns on HTA or BT. However, they may or may not be certified to work live on BT. TEs cannot work more than five days a week.</li>
+			<li>For worksites where ATST=TRUE, BT=TRUE, and TIPs are required, only TIPs certified for live work on BT should be assigned.</li>
+		    </ul>
+                    <h1>Prioritization Rules :</h1>
+		    <ul>
+			<li>Projects are prioritized based on the Priority column, if two projects have the same priority, the one with the earliest desired date takes precedence, if desired dates are also equal, the one with the oldest request date is prioritized.</li>
+			<li>Prefer contiguous days for preparation and execution, ideally assigned to the same Electrical Technician (TE). If Phasing = TRUE, the same TE <strong>must</strong> perform both preparation and execution.</li>
+			<li>Do not split tasks into durations shorter than half a day.</li>
+			<li>Favor assigning TEs from the Operational Base (BO) closest to the worksite.</li>
+		    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="experience-item">
+            <div class="experience-content">
+                <h3 class="highlight">Problem understanding and first glance solution</h3>
+                <p>After understanding the problem, we had to figure out how to assign technicians to worksites under constraints. Since the hackathon focused on AI, we came up with a reinforcement learning approach using a policy gradient method : the agent gets points when it sends the right technician to the right place, making better decisions over time.</p>
+            </div>
+            <div class="experience-image">
+                <img src="S1.png" alt="ai based solution">
+            </div>
+        </div>
+
+        <div class="experience-item reverse">
+            <div class="experience-content">
+                <h3 class="highlight">Limits of AI and alternative</h3>
+                <p>Even though our AI model showed promise, it struggled with the many constraints of the problem. Since reinforcement learning isn’t deterministic, the model often failed to consistently make the right choices. We decided to switch to a heuristic approach and started building a custom algorithm from scratch to clarify the logic.</p>
+            </div>
+            <div class="experience-image">
+                <img src="S2.png" alt="heuristic solution from scratch">
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-content">
+                <h3 class="highlight">Finalizing the optimized scheduling algorithm</h3>
+                <p>Given the number of constraints, it was judicious for us to move on to a CP-SAT solver — an OR-Tools engine designed for combinatorial problems like this one. We made it return structured outputs across multiple Excel files: technician schedules, assigned worksites, and a status report of executed or postponed worksites.</p>
+            </div>
+            <div class="experience-image">
+                <img src="S3.png" alt="cp sat solver">
+            </div>
+        </div>
+
+        <div class="experience-item reverse">
+            <div class="experience-content">
+                <h3 class="highlight">Deploying the constraint-based solution</h3>
+                <p>The Excel files generated by the CP-SAT solver were integrated into an API that powered the planning interface over a six-week horizon and mapped worksite statuses using color codes (completed, issues, pending). The interface included functionalities such as handling leave requests, with the planning changing dynamically via updates.</p>
+            </div>
+            <div class="experience-image">
+                <img src="S4.png" alt="apis">
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-content">
+                <h3 class="highlight">Presentation & Awards</h3>
+                <p>We presented our project and its demo in front of a jury of experts as part of the ENEDIS challenge. From seven competing projects, one team per challenge was selected to pitch again in the finals, where the Grand Prix was awarded. Our team reached the finals but unfortunately we didn't take home the Grand Prix.</p>
+            </div>
+            <div class="experience-image">
+                <img src="S5.jpg" alt="award">
+            </div>
+        </div>
+    </section>
+
+    <section class="research-section">
+        <h2 class="heading">Published <span>Research</span></h2>
+        <div class="research-container">
+            <div class="research-box">
+                <i class='bx bxs-file-pdf'></i>
+                <h3>Research Related to Artificial Intelligence</h3>
+                <p>Throughout my studies, I investigated Artificial Neural Networks, which supported my contributions during this hackathon.</p>
+                <a href="EE_ANN.pdf" target="_blank" rel="noopener noreferrer" class="btn">View PDF</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; Made in France</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#challenge"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="hackathon.js"></script>
+
+</body>
+</html>
