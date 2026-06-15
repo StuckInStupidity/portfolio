@@ -228,8 +228,8 @@
    display: flex;
    height: 270px;
    width: 270px;  
-   max-width:2700px;
-   min-width:2700px;
+   max-width:270px;
+   min-width:270px;
  }
 
  .portfolio-box img{
