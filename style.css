@@ -176,9 +176,10 @@
    text-align: center;
    border: 2px solid rgba(255,255,255,0.1);
    transition: 0.5s ease;
-   width: 350px;
-   max-width:350px;
-   height: 450px;
+   width: 300px;
+   max-width:300px;
+   min-width:300px;  
+   height: 400px;
  }
 
  .services-container .services-box:hover{
@@ -226,10 +227,10 @@
    box-shadow: 0 3px 6px var(--main-color);
    overflow: hidden;
    display: flex;
-   height: 270px;
-   width: 270px;  
-   max-width:270px;
-   min-width:270px;
+   height: 300px;
+   width: 300px;  
+   max-width:300px;
+   min-width:300px;
  }
 
  .portfolio-box img{
