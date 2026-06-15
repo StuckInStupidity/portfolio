@@ -169,7 +169,6 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   flex: 1 1 30rem;
    background: var(--ss-bg);
    padding: 3rem 2rem 4rem;
    border-radius: 2rem;
