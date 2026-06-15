@@ -178,7 +178,6 @@
    transition: 0.5s ease;
    width: 350px;
    max-width:350px;
-   min-width:350px;  
    height: 450px;
  }
 
@@ -228,9 +227,9 @@
    overflow: hidden;
    display: flex;
    height: 270px;
-   width: 300px;  
-   max-width:300px;
-   min-width:300px;
+   width: 270px;  
+   max-width:2700px;
+   min-width:2700px;
  }
 
  .portfolio-box img{
