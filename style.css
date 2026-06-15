@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
@@ -20,8 +18,7 @@
  }
 
  html{
-    font-size: 62.5%;
-    overflow-x:hidden;
+    font-size: 62%;
  }
 
  body{
@@ -48,21 +45,20 @@
  }
 
  .header.sticky{
-   border-bottom: .1rem solid rgba(0, 0,0, .2);
+   border-bottom: 0.1rem solid rgba(0, 0,0, 0.2);
  }
 
  .logo{
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight:600;
-    cursor:default;
  }
 
  .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
     margin-left: 4rem;
-    transition: .3s;
+    transition: 0.3s;
  }
 
  .navbar a:hover,
@@ -85,6 +81,8 @@
  .home-img img{
     width:300px;
     height:300px;
+    max-width:300px;
+    min-width:300px;
     border-radius : 50%;
     border: 3px solid var(--main-color);
     box-shadow: 0 0 30px var(--main-color);
@@ -117,12 +115,12 @@
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: .2rem solid var(--main-color);
+    border: 0.2rem solid var(--main-color);
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
  }
 
  .social-media a:hover{
@@ -140,8 +138,8 @@
     font-size: 1.6rem;
     color: var(--second-bg-color);
     font-weight: 600;
-    transition: .5s ease;
-    max-width: fit-content;
+    transition: 0.5s ease;
+    max-width: fit-content; /*Read More*/
     margin: 0 auto;   
  }
 
@@ -149,47 +147,10 @@
     box-shadow: none;
  }
 
- .btn-outline {
-    background: transparent;
-    border: .2rem solid var(--main-color);
-    color: var(--main-color);
- }
-
- .btn-outline:hover {
-    background: var(--main-color);
-    color: var(--second-bg-color);
- }
-
- .about{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: var(--second-bg-color);
- }
-
- .about-img img{
-    width: 35rem;
- }
-
  .heading{
     text-align: center;
     font-size: 4.5rem;
     margin-bottom: 5rem;
- }
-
- .about-content h2{
-    text-align: left;
-    line-height: 1.2;
- }
-
- .about-content h3{
-    font-size: 2.6rem;
- }
-
- .about-content p{
-    font-size: 1.6rem;
-    margin: 2rem 0 3rem;
  }
 
  .services h2{
@@ -214,8 +175,9 @@
    border-radius: 2rem;
    text-align: center;
    border: 2px solid rgba(255,255,255,0.1);
-   transition: .5s ease;
-   width: 200px;
+   transition: 0.5s ease;
+   width: 300px;
+   max-width:300px; /*min width ne pose pas de pb*/
    height: 400px;
  }
 
@@ -251,10 +213,11 @@
  }
 
  .portfolio-container{
-   display: grid;
-   grid-template-columns: repeat(3,1fr);
+   display: flex;
+   justify-content: center;
    align-items: center;
-   gap: 2.5rem;
+   flex-wrap: wrap;
+   gap: 2rem;
  }
 
  .portfolio-container .portfolio-box{
@@ -264,11 +227,13 @@
    overflow: hidden;
    display: flex;
    height: 300px;
+   max-width:300px;
+   min-width:300px;
  }
 
  .portfolio-box img{
    width: 100%;
-   transition: .5s ease;
+   transition: 0.5s ease;
  }
 
  .portfolio-box:hover img{
@@ -289,7 +254,7 @@
    text-align: center;
    padding: 0 4rem;
    transform: translateY(100%);
-   transition: .5s ease;
+   transition: 0.5s ease;
  }
 
  .portfolio-box:hover .portfolio-layer{
@@ -302,7 +267,7 @@
 
  .portfolio-layer p{
    font-size: 1.6rem;
-   margin: .3rem 0 1rem;
+   margin: 0.3rem 0 1rem;
  }
 
  .portfolio-layer a{
@@ -333,7 +298,7 @@
     background: var(--second-bg-color);
     padding: 3rem;
     border-radius: 2rem;
-    border: .2rem solid var(--bg-color);
+    border: 0.2rem solid var(--bg-color);
  }
 
  .challenge-brief {
@@ -346,10 +311,10 @@
  .challenge-toggle {
     display: inline-flex;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
     font-size: 1.6rem;
     color: var(--main-color);
-    transition: .3s;
+    transition: 0.3s;
  }
 
  .challenge-toggle:hover {
@@ -367,7 +332,7 @@
     max-height: 500rem;
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: .1rem solid rgba(255,255,255,.1);
+    border-top: 0.1rem solid rgba(255,255,255,.1);
  }
 
  .challenge-full h1 {
@@ -463,7 +428,7 @@
     padding: 5rem 3rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid var(--second-bg-color);
+    border: 0.2rem solid var(--second-bg-color);
  }
 
  .research-box i {
@@ -502,10 +467,10 @@
    display: inline-flex;
    justify-content: center;
    align-items: center;
-   padding: .8rem;
+   padding: 0.8rem;
    background: var(--main-color);
-   border-radius: .8rem;
-   transition: .5s ease;
+   border-radius: 0.8rem;
+   transition: 0.5s ease;
  }
 
  .footer-iconTop a:hover{
