@@ -176,10 +176,10 @@
    text-align: center;
    border: 2px solid rgba(255,255,255,0.1);
    transition: 0.5s ease;
-   width: 370px;
-   max-width:370px;
-   min-width:370px;  
-   height: 470px;
+   width: 350px;
+   max-width:350px;
+   min-width:350px;  
+   height: 450px;
  }
 
  .services-container .services-box:hover{
@@ -227,7 +227,7 @@
    box-shadow: 0 3px 6px var(--main-color);
    overflow: hidden;
    display: flex;
-   height: 300px;
+   height: 270px;
    width: 300px;  
    max-width:300px;
    min-width:300px;
