@@ -220,11 +220,12 @@
  }
 
  .portfolio-container .portfolio-box{
-   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    border-radius: 2rem;
    box-shadow: 0 3px 6px var(--main-color);
    overflow: hidden;
-   display: flex;
    height: 300px;
    width: 300px;  
  }
