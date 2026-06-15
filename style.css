@@ -176,9 +176,8 @@
    text-align: center;
    border: 2px solid rgba(255,255,255,0.1);
    transition: 0.5s ease;
-   width: 320px;
-   max-width:320px;
-   height: 420px;
+   width: 300px;
+   height: 400px;
  }
 
  .services-container .services-box:hover{
@@ -228,8 +227,6 @@
    display: flex;
    height: 300px;
    width: 300px;  
-   max-width:300px;
-   min-width:300px;
  }
 
  .portfolio-box img{
