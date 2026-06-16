@@ -129,23 +129,22 @@
     box-shadow: 0 0 1rem var(--main-color);
  }
 
- .btn {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background: var(--main-color);
-    border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
-    color: var(--second-bg-color);
-    font-weight: 600;
-    transition: 0.5s ease;
-    max-width: fit-content; /*Read More*/
-    margin: 0 auto;   
- }
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--main-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--second-bg-color);
+  transition: 0.5s ease;
+  margin-top: auto;
+}
 
- .btn:hover {
-    box-shadow: none;
- }
+.btn:hover {
+  box-shadow: none;
+}
 
  .heading{
     text-align: center;
@@ -153,55 +152,53 @@
     margin-bottom: 5rem;
  }
 
- .services h2{
-   margin-bottom: 5rem;
- }
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
 
- .services-container{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap: wrap;
-   gap: 2.5rem;
- }
+.services-container .services-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  width: 330px;
+  height: 460px;
+  padding: 3rem 2rem;
+  background: var(--ss-bg);
+  border-radius: 2rem;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: 0.5s ease;
+  box-sizing: border-box;
+}
 
- .services-container .services-box {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   text-align: center;
-   gap: 1.5rem;
-   background: var(--ss-bg);
-   padding: 3rem 2rem 4rem;
-   border-radius: 2rem;
-   border: 2px solid rgba(255,255,255,0.1);
-   transition: 0.5s ease;
-   width: 330px;
-   height: 460px;
- }
+.services-container .services-box:hover {
+  border-color: var(--main-color);
+  transform: scale(1.03);
+}
 
- .services-container .services-box:hover{
-   border-color: var(--main-color);
-   transform: scale(1.03);
- }
+.services-box i {
+  font-size: 7rem;
+  color: var(--main-color);
+}
 
- .services-box i{
-   font-size: 7rem;
-   color: var(--main-color);
- }
+.services-box h3 {
+  font-size: 2.6rem;
+  margin: 0;
+}
 
- .services-box h3{
-   font-size: 2.6rem;
- }
+.services-box p {
+  font-size: 1.6rem;
+  margin: 0;
+}
 
- .services-box p{
-   font-size: 1.6rem;
-   margin: 1rem 0 3rem;
- }
-
- .services-box a.btn {
+.services-box .btn {
   margin-top: auto;
- }
+}
 
  .portfolio{
    background: var(--ss-bg);
