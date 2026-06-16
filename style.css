@@ -163,6 +163,7 @@
 .services-container .services-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   gap: 1.5rem;
@@ -194,10 +195,6 @@
 .services-box p {
   font-size: 1.6rem;
   margin: 0;
-}
-
-.services-box .btn {
-  margin-top: auto;
 }
 
  .portfolio{
