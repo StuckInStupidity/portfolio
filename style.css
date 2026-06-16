@@ -168,11 +168,12 @@
  .services-container .services-box {
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+   gap: 1.5rem;
    background: var(--ss-bg);
    padding: 3rem 2rem 4rem;
    border-radius: 2rem;
-   text-align: center;
    border: 2px solid rgba(255,255,255,0.1);
    transition: 0.5s ease;
    width: 330px;
