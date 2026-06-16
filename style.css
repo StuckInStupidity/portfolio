@@ -175,8 +175,8 @@
    text-align: center;
    border: 2px solid rgba(255,255,255,0.1);
    transition: 0.5s ease;
-   width: 300px;
-   height: 400px;
+   width: 320px;
+   height: 420px;
  }
 
  .services-container .services-box:hover{
@@ -225,8 +225,8 @@
    border-radius: 2rem;
    box-shadow: 0 3px 6px var(--main-color);
    overflow: hidden;
-   height: 300px;
-   width: 300px;  
+   height: 320px;
+   width: 320px;  
  }
 
  .portfolio-box img{
